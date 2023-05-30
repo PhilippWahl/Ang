@@ -1,0 +1,78 @@
+<div class="grid-container">
+
+  <div class="grid-item">
+    <h2> {{car.id}} Ausgewählte Modifikationen:</h2>
+    <div>  <span > Felgen:  </span>  {{car.felgen}}</div>
+    <div> <span>Preis: </span> {{car.gesamtPreis}}  <span>€</span> </div>
+    <div>  <span>Farbe: </span> {{car.farbe}}</div>
+    <div>  <span>Motorleistung: </span>  {{car.motorleistung}} PS</div>
+    <div >  <span  >Addons: </span>  <span *ngFor="let addon of car.addOns"> {{addon}},</span>   </div>
+
+  </div>
+
+  <div class="grid-item">
+    <div >
+      <div class="input-group">
+        <div  class="mx-auto" >
+          <div>
+            <select class="custom-select" id="felgenSelect" title="Wähle Felgen"  #felgen (change)="onFelgenChange(felgen.value)">
+              <option value="1">Standart Felgen</option>
+              <option value="2">Premium Felgen</option>
+              <option value="3">Silber Felgen</option>
+            </select>
+          </div>
+          <div>
+            <select class="custom-select" id="farbenSelect" title="Wähle Farbe"  #farbe (change)="onColorChange(farbe.value)">
+              <option value="1">Schwarz</option>
+              <option value="2">Grau</option>
+              <option value="3">Silber</option>
+            </select>
+          </div>
+          <div>
+            <select class="custom-select" id="motorSelect" title="Wähle Motor"  #motor (change)="onMotorChange(motor.value)">
+              <option value="1">170 PS</option>
+              <option value="2">218 PS</option>
+              <option value="3">306 PS</option>
+              <option value="4">340 PS</option>
+            </select>
+          </div>
+
+          <div align="left">
+            <input class="form-check-input" type="checkbox" value="" id="klimaanlage" #klima (change)="onKlimaChange(klima.checked)">
+            <label class="form-check-label" for="klimaanlage">
+              Klimaanlage
+            </label>
+            <div>
+              <input class="form-check-input" type="checkbox" value="" id="hiFi-Lautsprechersystem" #sound (change)="onSoundChange(sound.checked)">
+              <label class="form-check-label" for="hiFi-Lautsprechersystem">
+                HiFi-Lautsprechersystem
+              </label>
+            </div>
+            <div>
+              <input class="form-check-input" type="checkbox" value="" id="sportlenkrad" #lenk (change)="onLenkChange(lenk.checked)">
+              <label class="form-check-label" for="sportlenkrad">
+                Sportlenkrad
+              </label>
+            </div>
+            <div>
+              <input class="form-check-input" type="checkbox" value="" id="alarmanlage" #alarm (change)="onAlarmChange(alarm.checked)">
+              <label class="form-check-label" for="alarmanlage">
+                Alarmanlage
+              </label>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="float-right">
+  <button type="submit" (click)="onSave()" > Save</button>
+</div>
+<span class="card-title text-center text-black-50 py-3">{{ url }}</span>
+
+

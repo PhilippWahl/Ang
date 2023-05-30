@@ -1,0 +1,27 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thread-dark">
+      <tr>
+       <th scope="col">ID</th>
+       <th scope="col">Felgen</th>
+       <th scope="col">Farbe</th>
+       <th scope="col">Motor</th>
+       <th scope="col">Zusatz</th>
+        <th scope="col">Preis</th>
+      </tr>
+      </thead>
+      <tr *ngFor="let car of cars">
+        <td> {{car.id}}</td>
+        <td> {{car.felgen}}</td>
+        <td> {{car.farbe}}</td>
+        <td> {{car.motorleistung}} PS</td>
+        <td> {{car.addOns.toString()}}</td>
+        <td>{{car.gesamtPreis}}</td>
+
+
+      </tr>
+
+    </table>
+  </div>
+</div>
