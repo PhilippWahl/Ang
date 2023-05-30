@@ -16,5 +16,5 @@ export class Car {
   addOnPreis: number =0
   addOns: string[]=[]
   gesamtPreis:number=28000
-  //test more
+  //test mor
 }
